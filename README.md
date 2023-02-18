@@ -1,1 +1,1 @@
-This folder is an exercise for C tasks
+This is a C file practise repo
