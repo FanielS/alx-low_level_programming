@@ -1,27 +1,24 @@
 #include "main.h"
 
+/**
+ * print_chessboard - print the chessboard, 2d array
+ * @a: 2d array of chars
+ */
 
-char *_strstr(char *haystack, char *needle)
+void print_chessboard(char (*a)[8])
 {
-	int i, j, c;
+	int y, x;
 
-	i = 0;
-	c = 0;
-	while (haystack[i] != '\0')
+	y = 0;
+	while (y < 8)
 	{
-		j = 0;
-		while (needle[j + c] != '\0' && haystack[i + c] != '\0'
-		       && needle[j + c] == haystack[i + c])
+		x = 0;
+		while (x < 8)
 		{
-			if (haystack[i + c] != needle[j + c])
-				break;
-			c++;
+			_putchar(a[y][x]);
+			x++;
 		}
-		if (needle[j + c] == '\0')
-			return (&haystack[i]);
-		j++;
-		i++;
+		_putchar('\n');
+		y++;
 	}
-
-	return (NULL);
 }
