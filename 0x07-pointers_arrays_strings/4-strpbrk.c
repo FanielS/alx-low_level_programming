@@ -2,19 +2,24 @@
 
 char *_strpbrk(char *s, char *accept)
 {
-	int index;
+	int i, j;
+	char *p;
 
-	while (*s)
+	i = 0;
+	while (s[i] != '\0')
 	{
-		for (index = 0; accept[index]; index++)
+		j = 0;
+		while (accept[j] != '\0')
 		{
-			if (*s == accept[index])
-				return (s);
+			if (accept[j] == s[i])
+			{
+				p = &s[i];
+				return (p);
+			}
+			j++;
 		}
-
-		s++;
+		i++;
 	}
 
-	return ('\0');
+	return (0);
 }
-
